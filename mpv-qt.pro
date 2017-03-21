@@ -37,7 +37,5 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-win32: LIBS += -L$$PWD/../../Toolkits/mpv-dev-20170212/32/ -llibmpv.dll
-
-INCLUDEPATH += $$PWD/../../Toolkits/mpv-dev-20170212/include
-DEPENDPATH += $$PWD/../../Toolkits/mpv-dev-20170212/include
+win32: LIBS += -llibmpv.dll
+unix: LIBS += -llibmpv
