@@ -3,9 +3,9 @@
 
 #include <QQuickFramebufferObject>
 
-#include "client.h"
-#include "opengl_cb.h"
-#include "qthelper.hpp"
+#include "mpv/client.h"
+#include "mpv/opengl_cb.h"
+#include "mpv/qthelper.hpp"
 
 class MpvRenderer;
 

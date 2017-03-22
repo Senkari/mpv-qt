@@ -13,7 +13,8 @@ SOURCES += src/main.cpp \
     src/mpvobject.cpp \
     src/playercontroller.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += qml.qrc \
+    data.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -37,5 +38,11 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-win32: LIBS += -llibmpv.dll
-unix: LIBS += -llibmpv
+win32: LIBS += -L$$PWD/../../Toolkits/mpv-dev-20170212/32 -llibmpv.dll
+unix: LIBS += -lmpv
+
+# Custom include paths.
+win32: INCLUDEPATH += $$PWD/../../Toolkits/mpv-dev-20170212/include
+win32: DEPENDPATH += $$PWD/../../Toolkits/mpv-dev-20170212/include
+win32: INCLUDEPATH += $$PWD/../../Toolkits/mpv-dev-20170212/include/mpv
+win32: DEPENDPATH += $$PWD/../../Toolkits/mpv-dev-20170212/include/mpv

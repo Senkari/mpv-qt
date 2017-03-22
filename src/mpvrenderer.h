@@ -5,8 +5,8 @@
 #include <QQuickFramebufferObject>
 #include <QQuickWindow>
 
-#include "qthelper.hpp"
-#include "opengl_cb.h"
+#include "mpv/qthelper.hpp"
+#include "mpv/opengl_cb.h"
 
 #include "mpvobject.h"
 
